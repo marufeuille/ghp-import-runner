@@ -34,14 +34,27 @@ So, I created Dockerlized ghp-import tool.
 ## How to use this
 ### Build
 
+first time, you use this tool, type bellow.
 ```
 docker build -t YOUR_TAG_NAME .
 ```
 
 ### Use
 
+first time, you use this tool, type bellow.
 ```
-docker run --name pusher -e "GIT_REPO=git@github.com:YOUR_ACCOUT/YOUR_REPOS" -e SOURCE_BRANCH=YOUR_SOURCECODE_BRANCH -e OUTPUT_DIR=YOUR_DIR_THAT_CONTAINS_YOUR_OUTPUTS -v /path/to/your/secretkey/that/you/registered/to/github.com:/root/.ssh/id_rsa --rm  YOUR_TAG_NAME
+docker run --name YOUR_COOL_NAME \
+           -e "GIT_REPO=git@github.com:YOUR_ACCOUT/YOUR_REPOS" \
+           -e SOURCE_BRANCH=YOUR_SOURCECODE_BRANCH \
+           -e OUTPUT_DIR=YOUR_DIR_THAT_CONTAINS_YOUR_OUTPUTS \
+           -v /path/to/your/secretkey/that/you/registered/to/github.com:/root/.ssh/id_rsa
+           YOUR_TAG_NAME
+```
+
+next time, you update source branch simply type bellow.
+
+```
+docker restart YOUR_COOL_NAME
 ```
 
 that's all
